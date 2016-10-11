@@ -53,7 +53,7 @@ public class StudentTest {
 	
 	@Test
 	public void testAverageGrade() {
-		double average = stud.getFirstGrade() + stud.getSecondGrade() + stud.getThirdGrade()/3;
+		double average = (stud.getFirstGrade() + stud.getSecondGrade() + stud.getThirdGrade())/3;
 		stud.setAverageGrade(average);
 		assertEquals(stud.getAverageGrade(), average, 0.000001);
 		
@@ -68,11 +68,36 @@ public class StudentTest {
 	}
 	
 	@Test
+	public void testCalculateAverage2() {
+		double sum = stud.getFirstGrade() +stud.getSecondGrade() +stud.getThirdGrade();
+		double average = sum /3;
+		stud.setAverageGrade(average);
+		assertEquals(stud.calculateAverage(stud.getFirstGrade()), average, 0.000001);
+
+	}
+	
+	@Test
+	public void testCalculateAverage3() {
+		double sum = stud.getFirstGrade() +stud.getSecondGrade() +stud.getThirdGrade();
+		double average = sum /3;
+		stud.setAverageGrade(average);
+		assertEquals(stud.calculateAverage(stud.getFirstGrade(), stud.getSecondGrade(), stud.getThirdGrade()), average, 0.000001);
+	}
+	
+	@Test
 	public void testHasClearedCourse() {
 		stud.setAverageGrade(6);
 		assertEquals(stud.hasClearedTheCourse(), true);
 		stud.setAverageGrade(4);
 		assertEquals(stud.hasClearedTheCourse(), false);
+	}
+	
+	@Test
+	public void testToString() {
+		stud.toString();
+		assertEquals(stud.toString(), true);
+		
+		assertEquals(stud.toString(), false);
 	}
 	
 
