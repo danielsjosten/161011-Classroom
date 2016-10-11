@@ -94,10 +94,11 @@ public class StudentTest {
 	
 	@Test
 	public void testToString() {
-		stud.toString();
-		assertEquals(stud.toString(), true);
-		
-		assertEquals(stud.toString(), false);
+		//stud.setAverageGrade(6);
+		assertEquals(stud.toString(), stud.hasClearedTheCourse()==true, true);
+		System.out.println(stud.toString());
+		assertEquals(stud.toString(), false, false);
+		System.out.println(stud.toString());
 	}
 	
 
