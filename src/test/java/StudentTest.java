@@ -35,6 +35,7 @@ public class StudentTest {
 	@Test
 	public void testFirstGrade() {
 		stud.setFirstGrade(1);
+		assertEquals(stud.getFirstGrade(), 1, 0.00001);
 	//assertEquals(stud.setSecondGrade(1), stud.getFirstGrade(), 1);
 	
 
@@ -43,30 +44,30 @@ public class StudentTest {
 	@Test
 	public void testSecondGrade() {
 		stud.setSecondGrade(2);
-		stud.getSecondGrade();
-		//assertEquals(stud.getSecondGrade(), 2.0);
+		assertEquals(stud.getSecondGrade(), 2, 0.000001);
 		
 	}
 	
 	@Test
 	public void testThirdGrade() {
 		stud.setThirdGrade(3);
-		stud.getThirdGrade();
-		//assertEquals(stud.getThirdGrade(), 3.0);
+		assertEquals(stud.getThirdGrade(), 3, 0.000001);
 	}
 	
 	@Test
 	public void testAverageGrade() {
 		double average = stud.getFirstGrade() + stud.getSecondGrade() + stud.getThirdGrade()/3;
 		stud.setAverageGrade(average);
-		stud.getAverageGrade();
+		assertEquals(stud.getAverageGrade(), average, 0.000001);
 		
 	}
 	
 	@Test
 	public void testCalculateAverage1() {
-		double average = stud.getFirstGrade() + stud.getSecondGrade() + stud.getThirdGrade()/3;
+		double sum = stud.getFirstGrade() +stud.getSecondGrade() +stud.getThirdGrade();
+		double average = sum /3;
 		stud.setAverageGrade(average);
+		
 		
 		
 		
@@ -79,5 +80,7 @@ public class StudentTest {
 		stud.setAverageGrade(4);
 		assertEquals(stud.hasClearedTheCourse(), false);
 	}
+	
+
 
 }
