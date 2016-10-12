@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -94,11 +94,13 @@ public class StudentTest {
 	
 	@Test
 	public void testToString() {
-		//stud.setAverageGrade(6);
-		assertEquals(stud.toString(), stud.hasClearedTheCourse()==true, true);
+		stud.setAverageGrade(6);
+		//assertEquals(stud.toString(), stud.setAverageGrade(8), true);
 		System.out.println(stud.toString());
-		assertEquals(stud.toString(), false, false);
+		assertEquals(stud.toString(), false, true);
 		System.out.println(stud.toString());
+		
+
 	}
 	
 
