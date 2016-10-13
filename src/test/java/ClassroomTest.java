@@ -1,4 +1,4 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
@@ -25,12 +25,24 @@ public class ClassroomTest {
 	}
 
 	@Test
-	public void setAndGetStudents() {
+	public void testSetAndGetStudents() {
 		cr.addANewStudent(student1);
 		cr.setStudents(students);
 		cr.getStudents();
-
-
+		//assertArrayEquals(expecteds, actuals); ??
 	}
-
+	
+	@Test
+	public void testRemoveStudentFromArrayList() {
+		Student student1 = new Student("Danne", "Sjösten", 28, 'M', 8.2, 9.0, 6.0);
+		cr.removeAStudent(student1.getFirstName());
+	}
+	
+	@Test
+	public void testPrintRelatory() {
+		Student student1 = new Student("Danne", "Sjösten", 28, 'M', 8.2, 9.0, 6.0);
+		Student student2 = new Student("Danne", "Sjösten", 28, 'M', 8.2, 9.0, 6.0);
+	cr.printFullRelatory();
+	}
+	
 }
